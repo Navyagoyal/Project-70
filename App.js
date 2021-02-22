@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Image} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import ReadStoryScreen from './screens/ReadStoryScreen';
 import WriteStoryScreen from './screens/WriteStoryScreen';
+import {Header} from 'react-native-elements';
+import {TextInput} from 'react-native-gesture-handler';
 
 export default class App extends React.Component{
   render(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.container}>      
+      <AppContainer/>
     </View>
   );
   }
@@ -38,6 +40,7 @@ const TabNavigator=createBottomTabNavigator({
   })
 }
 )
+const AppContainer=createAppContainer(TabNavigator);
 
 const styles = StyleSheet.create({
   container: {

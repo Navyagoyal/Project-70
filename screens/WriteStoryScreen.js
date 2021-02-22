@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,TextInput } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
+import { Header } from 'react-native-elements';
 
 export default class WriteStoryScreen extends React.Component {
   constructor(){
@@ -10,17 +10,15 @@ export default class WriteStoryScreen extends React.Component {
       search:''
     }
   }
-    render(){
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Header></Header>
-      <TextInput style={styles.bar} placeholder="Title of the story" on onChangeText={(text)=>{this.setState({search:text})}}/>
-      <TextInput style={styles.bar} placeholder="Author of the story" on onChangeText={(text)=>{this.setState({search:text})}}/>
-      <TextInput style={styles.bar} placeholder="Write the story" on onChangeText={(text)=>{this.setState({search:text})}}/>
-    </View>
-  );
-    }
+  render(){
+    return (
+      <View style={styles.container}>
+        <TextInput style={styles.title} placeholder="Title of the story" onChangeText={(text)=>{this.setState({search:text})}}/>
+        <TextInput style={styles.author} placeholder="Author of the story" onChangeText={(text)=>{this.setState({search:text})}}/>
+        <TextInput style={styles.story} placeholder="Write the story" onChangeText={(text)=>{this.setState({search:text})}}/>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -30,4 +28,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title:{
+    height:30,
+    margin:10,
+    padding:5,
+    color:"black",
+    marginTop:40
+  },
+  author:{
+    height:30,
+    margin:10,
+    padding:5
+  },
+  story:{
+    height:200,
+    margin:10,
+    padding:5,
+  }
 });
